@@ -366,44 +366,44 @@ def day_week(update, context):
     a = int(now.strftime('%w'))
     if a == 0:
         context.bot.send_message(update.effective_chat.id, 'Сегодня воскресенье, этот букет для тебя любимая')
-        send = open('розы.jpg', 'rb')
-        context.bot.send_document(update.effective_chat.id, send)
+        with open('images/розы.jpg', 'rb') as send:
+            context.bot.send_document(update.effective_chat.id, send)
         time.sleep(7)
         return klava(update, context)
     elif a == 1:
         context.bot.send_message(update.effective_chat.id, 'Сегодня понедельник, этот букет для тебя любимая')
-        send = open('незабудки.jpg', 'rb')
-        context.bot.send_document(update.effective_chat.id, send)
+        with open('images/незабудки.jpg', 'rb') as send:
+            context.bot.send_document(update.effective_chat.id, send)
         time.sleep(7)
         return klava(update, context)
     elif a == 2:
         context.bot.send_message(update.effective_chat.id, 'Сегодня вторник, этот букет для тебя любимая')
-        send = open('васильки.jpg', 'rb')
-        context.bot.send_document(update.effective_chat.id, send)
+        with open('images/васильки.jpg', 'rb') as send:
+            context.bot.send_document(update.effective_chat.id, send)
         time.sleep(7)
         return klava(update, context)
     elif a == 3:
         context.bot.send_message(update.effective_chat.id, 'Сегодня среда, этот букет для тебя любимая')
-        send = open('герберы.jpg', 'rb')
-        context.bot.send_document(update.effective_chat.id, send)
+        with open('images/герберы.jpg', 'rb') as send:
+            context.bot.send_document(update.effective_chat.id, send)
         time.sleep(7)
         return klava(update, context)
     elif a == 4:
         context.bot.send_message(update.effective_chat.id, 'Сегодня четверг, этот букет для тебя любимая')
-        send = open('пионы.jpg', 'rb')
-        context.bot.send_document(update.effective_chat.id, send)
+        with open('images/пионы.jpg', 'rb') as send:
+            context.bot.send_document(update.effective_chat.id, send)
         time.sleep(7)
         return klava(update, context)
     elif a == 5:
         context.bot.send_message(update.effective_chat.id, 'Сегодня пятница, этот букет для тебя любимая')
-        send = open('роза.jpg', 'rb')
-        context.bot.send_document(update.effective_chat.id, send)
+        with open('images/роза.jpg', 'rb') as send:
+            context.bot.send_document(update.effective_chat.id, send)
         time.sleep(7)
         return klava(update, context)
     elif a == 6:
         context.bot.send_message(update.effective_chat.id, 'Сегодня суббота, этот букет для тебя любимая')
-        send = open('ромашка.jpg', 'rb')
-        context.bot.send_document(update.effective_chat.id, send)
+        with open('images/ромашка.jpg', 'rb') as send:
+            context.bot.send_document(update.effective_chat.id, send)
         time.sleep(7)
         return klava(update, context)
 
@@ -438,21 +438,23 @@ def photo(update, context):
     photo_file.download(username + '2_photo.jpg')
     a = random.randint(0, (len(list2) - 1))
     mem(username=username, bs=list2[a])
-    send = open(username + '2_mem.jpg', 'rb')
-    context.bot.send_document(update.effective_chat.id, send)
+    with open(username + '2_mem.jpg', 'rb') as send:
+        context.bot.send_document(update.effective_chat.id, send)
     time.sleep(10)
     return klava(update, context)
 
 
-list3 = ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg', '7.jpg', '8.jpg', '9.jpg', '10.jpg', '11.jpg', '12.jpg',
-         '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg', '21.jpg', '22.jpg']
+list3 = ['images/1.jpg', 'images/2.jpg', 'images/3.jpg', 'images/4.jpg', 'images/5.jpg', 'images/6.jpg',
+         'images/7.jpg', 'images/8.jpg', 'images/9.jpg', 'images/10.jpg', 'images/11.jpg', 'images/12.jpg',
+         'images/13.jpg', 'images/14.jpg', 'images/15.jpg', 'images/16.jpg', 'images/17.jpg',
+         'images/18.jpg', 'images/19.jpg', 'images/20.jpg', 'images/21.jpg', 'images/22.jpg']
 
 
 def photos(update, context):
     context.bot.send_message(update.effective_chat.id, 'Наши воспоминания')
     a = random.randint(0, (len(list3) - 1))
-    send = open(list3[a], 'rb')
-    context.bot.send_document(update.effective_chat.id, send)
+    with open(list3[a], 'rb') as send:
+        context.bot.send_document(update.effective_chat.id, send)
     time.sleep(7)
     return klava(update, context)
 
