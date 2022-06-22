@@ -1,0 +1,7 @@
+python-dotenv==0.20.0
+python-telegram-bot==13.11
+emoji==1.7.0
+Pillow==9.1.0
+
+
+
